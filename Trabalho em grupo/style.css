@@ -43,6 +43,9 @@ main {
     margin: 10px;
 }
 
+main h1 {
+    margin-left: 20px;
+}
 main p {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -77,10 +80,12 @@ main th {
 }
 
 footer {
-    margin-top: 700px;
+    margin-top: 50px;
 }
 
 footer p {
     text-align: center;
     font-size: small;
+    font-weight: bold;
+    margin-top: 5px;
 }
