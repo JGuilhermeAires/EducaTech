@@ -38,3 +38,49 @@ header{
 .item:hover{
     transform: scale(1.5);
 }
+
+main {
+    margin: 10px;
+}
+
+main p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+main ol,ul {
+    margin-left: 15px;
+}
+
+main td {
+    margin: 4px;
+    padding: 4px auto;
+    font-family: 'Courier New', Courier, monospace;
+    border-style: solid;
+    border-color: darkgray;
+    text-align: center;
+}
+
+main th {
+    border-style: solid;
+    border-color: darkgray;
+    text-align: center;
+}
+
+.txt_destaque {
+    font-style: italic;
+    color: cadetblue;
+}
+
+.sessao {
+    margin: 25px;
+}
+
+footer {
+    margin-top: 700px;
+}
+
+footer p {
+    text-align: center;
+    font-size: small;
+}
