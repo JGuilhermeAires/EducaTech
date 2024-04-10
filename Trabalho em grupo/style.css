@@ -75,6 +75,9 @@ main th {
     color: cadetblue;
 }
 
+.hexa {
+    font-size: small;
+}
 .sessao {
     margin: 25px;
     text-align: justify;
