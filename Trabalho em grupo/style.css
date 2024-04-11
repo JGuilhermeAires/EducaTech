@@ -75,9 +75,6 @@ main th {
     color: cadetblue;
 }
 
-.hexa {
-    font-size: small;
-}
 .sessao {
     margin: 25px;
     text-align: justify;
@@ -91,4 +88,7 @@ footer p {
     text-align: center;
     font-size: small;
     font-weight: bold;
+}
+a{
+    color: black;
 }
