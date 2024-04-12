@@ -55,6 +55,11 @@ main ol,ul {
     margin-left: 15px;
 }
 
+main ul li {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
 main td {
     margin: 4px;
     padding: 4px auto;
