@@ -1,4 +1,5 @@
-*{
+*
+{
     margin: 0%;
     box-sizing: border-box;
     font-family: Arial;
@@ -77,4 +78,13 @@ footer p {
     text-align: center;
     font-size: small;
     font-weight: bold;
+    color: white;
+
+}
+.footer-content {
+    background-image: url('chao.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
 }

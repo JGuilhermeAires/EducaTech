@@ -65,11 +65,22 @@ body {
     margin-bottom: 10px;
 }
 footer {
-    margin-top: 50px;
+    margin-top: 250px;
+    
 }
 
 footer p {
     text-align: center;
     font-size: small;
     font-weight: bold;
+    color: white;
+    
+
+}
+.footer-content {
+    background-image: url('chao.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
 }
