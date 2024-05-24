@@ -4,21 +4,25 @@
     font-family: Arial;
     text-decoration: none;
 }
+
 header{
     height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .logo{
     width: 100%;
     height: 100%;
 }
+
 .class{
     width: 220px;
     height: 110px;
     margin-left: 2em;
 }
+
 .menu-container{
     font-size: 40px;
     width: 100px;
@@ -27,6 +31,7 @@ header{
     position: absolute;
     left: 12em;
 }
+
 .item {
     transition: transform;
     color:black;
@@ -35,12 +40,15 @@ header{
     transition: 0.5s;
     cursor: pointer;
 }
+
 .item:hover{
     transform: scale(1.5);
 }
+
 body {
     font-family: Arial, sans-serif;
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -48,46 +56,15 @@ body {
     align-items: center;
     margin-top: 20px;
 }
+
 h1{
     text-align: center;
 }
+
 .margem{
     margin-left: 15px;
     padding: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .membro {
     flex: 1 1 20%;
@@ -95,9 +72,11 @@ h1{
     margin-bottom: 20px;
     margin-right: 50px;
 }
+
 .membro:last-child {
     margin-right: 0;
 }
+
 .membro img {
     width: 100px;
     height: 100px;
@@ -105,9 +84,37 @@ h1{
     object-fit: cover;
     margin-bottom: 10px;
 }
+
+.titulo {
+    margin-bottom: 30px;
+}
+
+#pergunta {
+    margin-top: 30px;
+}
+
+#opcoes {
+    margin-top: 30px;
+}
+
+#botao {
+    margin-top: 30px;
+}
+
+#resultado {
+    margin-top: 30px;
+}
+
+.resp_certa {
+    color: blue;
+}
+
+.resp_errada {
+    color: red;
+}
+
 footer {
     margin-top: 250px;
-    
 }
 
 footer p {
@@ -115,9 +122,8 @@ footer p {
     font-size: small;
     font-weight: bold;
     color: white;
-    
-
 }
+
 .footer-content {
     background-image: url('chao.png');
     background-size: cover;
