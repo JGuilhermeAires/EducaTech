@@ -1,68 +1,49 @@
 <!DOCTYPE html>
-<html lang="pr-Br">
+<html lang="pt-br">
   <head>
-    <meta charset="pt-Br" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="quiz.css" />
     <title>Quiz</title>
   </head>
+
   <body>
 
-    <header>
-      <figure class="class">
-          <img src="AdobeStock_777573036_Preview.png" alt="" class="logo">
-      </figure>
-      <nav class="menu-container">
-          <a href="index.html" class="item">Home</a>
-          <a href="sobre.html" class="item">Sobre</a>
-          <a href="quiz.html" class="item">Quiz</a>
-          <a href="contato.html" class="item">Contato</a>
-      </nav>
-
-
-
-
-
-
-
+  <header>
+    
+    <figure class="class">
+      <img src="AdobeStock_777573036_Preview.png" alt="" class="logo">
+    </figure>
+    
+    <nav class="menu-container">
+      <a href="index.html" class="item">Home</a>
+      <a href="sobre.html" class="item">Sobre</a>
+      <a href="quiz.html" class="item">Quiz</a>
+      <a href="contato.html" class="item">Contato</a>
+    </nav>
+  
   </header>
+  
   <br>
+  <h1 class="titulo">Quiz sobre Sistemas Hexadecimais</h1>
+  <br>
+  <br>
+  <br>
+  <div class="margem">
+    <div id="quiz">
+      
+      <h2 id="pergunta"></h2>
+      <br>
 
-      <h1 class="titulo">Quiz sobre Sistemas Hexadecimais</h1>
-<br>
-<br>
-<br>
-<div class="margem">
-      <div id="quiz">
-        <h2 id="pergunta"></h2>
-<br>
-
-        <ol id="opcoes"></ol>
+      <ol id="opcoes"></ol>
         <br>
         <button id="botao">Responder</button>
       </div>
-    <br>
+      <br>
     <div id="resultado"></div>
-</div>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
+  <script>
     // Array de perguntas e respostas
     const questoes = [
       {
@@ -95,7 +76,7 @@
         opcoes: ["Não há relação direta", "Os computadores usam hexadecimal apenas para operações matemáticas complexas", "Os computadores usam o sistema hexadecimal para representar cores e endereços de memória"],
         resposta: "Os computadores usam o sistema hexadecimal para representar cores e endereços de memória"
       },
-     {
+      {
         questao: "Qual é o valor hexadecimal do número binário 1010?",
         opcoes: ["A", "B", "C"],
         resposta: "A"
@@ -177,94 +158,96 @@
       }
     ];
 
-      let nummero_pergunta = -1;
-      const perg = document.getElementById("pergunta");
-      const ul = document.getElementById("opcoes");
-      const botao = document.getElementById('botao');
-      let resultado = document.getElementById("resultado");
-      var respostas_certas = 0;
-      var respostas_erradas = 0;
-      let resposta_usuario = '';
+    let nummero_pergunta = -1;
+    const perg = document.getElementById("pergunta");
+    const ul = document.getElementById("opcoes");
+    const botao = document.getElementById('botao');
+    let resultado = document.getElementById("resultado");
+    var respostas_certas = 0;
+    var respostas_erradas = 0;
+    let resposta_usuario = '';
 
-      var pp = function proxPergunta(event) {
-        nummero_pergunta++;
-        if(nummero_pergunta == questoes.length) {
-          exibe_resultado();
-        }
-        // exibe a pergunta a ser exibida
-        perg.textContent = questoes[nummero_pergunta].questao;
+    var pp = function proxPergunta(event) {
+      nummero_pergunta++;
+      if(nummero_pergunta == questoes.length) {
+        exibe_resultado();
+      }
+      // exibe a pergunta a ser exibida
+      perg.textContent = questoes[nummero_pergunta].questao;
 
-        ul.innerHTML = '';
-        resultado.innerHTML = "";
+      ul.innerHTML = '';
+      resultado.innerHTML = "";
         
-        // exibe as opções de resposta
-        for (let i = 0; i < questoes[nummero_pergunta].opcoes.length; i++) {
-          li = document.createElement("li");
+      // exibe as opções de resposta
+      for (let i = 0; i < questoes[nummero_pergunta].opcoes.length; i++) {
+        li = document.createElement("li");
 
-          radio = document.createElement("input");
-          radio.type = "radio";
-          radio.name = "xxx"
+        radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "xxx"
 
-          const label = document.createElement("label");
-          label.textContent = questoes[nummero_pergunta].opcoes[i];
+        const label = document.createElement("label");
+        label.textContent = questoes[nummero_pergunta].opcoes[i];
 
-          li.appendChild(radio);
-          li.appendChild(label);
-          li.addEventListener('click', () => {
-            resposta_usuario = label.textContent;
-          });
-          ul.appendChild(li);
-        }
-        document.getElementById("botao").removeEventListener('click', pp)
-        document.getElementById("botao").addEventListener('click', cr)
-        let botao = document.getElementById("botao");
-        botao.textContent = "Enviar";
+        li.appendChild(radio);
+        li.appendChild(label);
+        li.addEventListener('click', () => {
+          resposta_usuario = label.textContent;
+        });
+        ul.appendChild(li);
       }
+      document.getElementById("botao").removeEventListener('click', pp)
+      document.getElementById("botao").addEventListener('click', cr)
+      let botao = document.getElementById("botao");
+      botao.textContent = "Enviar";
+    }
 
-      var cr = function checaResposta(event) {
-        resultado = document.getElementById("resultado");
-        if (resposta_usuario == questoes[nummero_pergunta].resposta) {
-          respostas_certas++;
-          resultado.innerHTML = "Resposta Certa ! " + questoes[nummero_pergunta].resposta;
-        } else {
-          respostas_erradas++;
-          resultado.innerHTML = "Resposta Errada ! " + questoes[nummero_pergunta].resposta;
-        }
+    var cr = function checaResposta(event) {
+      resultado = document.getElementById("resultado");
+      if (resposta_usuario == questoes[nummero_pergunta].resposta) {
+        respostas_certas++;
+        resultado.innerHTML = "Resposta Certa ! " + questoes[nummero_pergunta].resposta;
+      } else {
+        respostas_erradas++;
+        resultado.innerHTML = "Resposta Errada ! " + questoes[nummero_pergunta].resposta;
+      }
         
-        let botao = document.getElementById("botao");
-        botao.textContent = "Próxima Pergunta";
-        document.getElementById("botao").removeEventListener('click', cr)
-        document.getElementById("botao").addEventListener('click', pp)
-      }
+      let botao = document.getElementById("botao");
+      botao.textContent = "Próxima Pergunta";
+      document.getElementById("botao").removeEventListener('click', cr)
+      document.getElementById("botao").addEventListener('click', pp)
+    }
 
-      function exibe_resultado() {
-        div = document.getElementById('quiz');
-        div.innerHTML = '';
+    function exibe_resultado() {
+      div = document.getElementById('quiz');
+      div.innerHTML = '';
 
-        div1 = document.createElement("div");
-        div1.innerHTML = 'Respostas certas: ' + respostas_certas;
-        div.appendChild(div1);
+      div1 = document.createElement("div");
+      div1.innerHTML = 'Respostas certas: ' + respostas_certas;
+      div.appendChild(div1);
 
-        div2 = document.createElement("div");
-        div2.innerHTML = 'Respostas erradas: ' + respostas_erradas;
-        div.appendChild(div2);
+      div2 = document.createElement("div");
+      div2.innerHTML = 'Respostas erradas: ' + respostas_erradas;
+      div.appendChild(div2);
 
-        resultado.innerHTML = "";
-      }
+      resultado.innerHTML = "";
+    }
 
-      respostas_certas = 0;
-      respostas_erradas = 0;
-      botao.addEventListener('click', pp);
+    respostas_certas = 0;
+    respostas_erradas = 0;
+    botao.addEventListener('click', pp);
       
-      botao.dispatchEvent('click', pp(event));
+    botao.dispatchEvent('click', pp(event));
 
-    </script>
+  </script>
 
-<footer>
-  <div class="footer-content">
+  <footer>
+    <div class="footer-content">
       <p>Cesar School</p>
       <p>Equipe 6 - Curso ADS 2024.1</p>
       <p>&copy; 2024</p>
-  </div>
+    </div>
+  </footer>
+
   </body>
 </html>
