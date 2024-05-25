@@ -42,6 +42,11 @@ body {
     transition: background-color 0.3s;
 }
 
+.hexa {
+    color: #444;
+    background-color: #444;
+}
+
 .acao {
     background-color: orange;
 }
