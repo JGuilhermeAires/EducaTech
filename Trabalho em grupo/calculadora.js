@@ -4,15 +4,21 @@ function limparTela() {
 
 function digito(value) {
     const display = document.getElementById('display');
-    if (display.innerText === '0') {
+    if (display.innerText === '0x0') {
         display.innerText = value;
     } else {
         display.innerText += value;
     }
 }
 
-function calcularResultado() {
+//function calcularResultado() {
+//    const display = document.getElementById('display');
+//    display.innerText = eval(display.innerText);
+//}
+
+function converteHexa() {
     const display = document.getElementById('display');
-    display.innerText = eval(display.innerText);
-    console.log(display);
+    numero = parseFloat(display.textContent);
+    display.innerText = numero.toString(16).toUpperCase();
+    display.innerText = "0x" + display.innerText;
 }
